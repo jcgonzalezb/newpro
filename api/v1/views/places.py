@@ -143,6 +143,7 @@ def places_search():
         list_places = []
         for place in places:
             list_places.append(place.to_dict())
+        list_places = sorted(list_places, key=lambda x: x['name'])
         return jsonify(list_places)
 
     list_places = []
@@ -176,5 +177,5 @@ def places_search():
         d = p.to_dict()
         d.pop('amenities', None)
         places.append(d)
-
+    places = sorted(places, key=lambda x: x.name)
     return jsonify(places)
