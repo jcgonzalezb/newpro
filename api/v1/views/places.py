@@ -157,6 +157,7 @@ def places_search():
                             list_places.append(place)
 
     if cities:
+
         city_obj = [storage.get(City, c_id) for c_id in cities]
         for city in city_obj:
             if city:
@@ -177,5 +178,5 @@ def places_search():
         d = p.to_dict()
         d.pop('amenities', None)
         places.append(d)
-    places = sorted(places, key=lambda x: x.name)
+    places = sorted(places, key=lambda x: x['name'])
     return jsonify(places)
