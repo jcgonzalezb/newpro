@@ -68,6 +68,10 @@ button:hover {
     width: 0px;
 }
 
+#amenities_filter {
+    max-block-size: 16px;
+}
+
 .amenities .popover {
     padding: 10px 0;
     margin-left: -5px;
@@ -75,7 +79,7 @@ button:hover {
 }
 
 .amenities .popover ul{
-    margin: 0px;
+    margin: 10px;
 }
 
 .locations .popover {

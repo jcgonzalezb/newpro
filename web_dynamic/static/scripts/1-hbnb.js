@@ -15,10 +15,15 @@ $(document).ready(function () {
         }
         $('#amenities_filter').text('')
         for (let i = 0; i < amenities.length; i++) {
-            if (i == 0)
-                $('#amenities_filter').append(amenities[i])
-            else
-                $('#amenities_filter').append(", " + amenities[i])
+            if ($('#amenities_filter')[0].textContent.length < 40){
+                if (i == 0)
+                    $('#amenities_filter').append(amenities[i])
+                else
+                    $('#amenities_filter').append(", " + amenities[i])
+            } else {
+                $('#amenities_filter').append("...")
+                break;
+            }
         }
     });
 });
