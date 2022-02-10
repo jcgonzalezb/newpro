@@ -34,7 +34,7 @@ $.get("http://172.24.238.0:5001/api/v1/status/", function(data, textStatus)
 
 $.ajax({
     type: "POST",
-    url: "http://172.24.238.0:5001/api/v1/places_search",
+    url: "http://localhost:5001/api/v1/places_search",
     data: JSON.stringify({}),
     contentType: 'application/json',
     success: function(data){
@@ -48,7 +48,7 @@ $.ajax({
             $("section.places article#" + data[i].id + " div.information").append($("<div class='number_rooms'> " + data[i].number_rooms + " Bedroom" + (data[i].max_guest != 1 ? 's' : '') + "</div>"))
             $("section.places article#" + data[i].id + " div.information").append($("<div class='number_bathrooms'>" + data[i].number_bathrooms + " Bathroom" + (data[i].number_bathrooms != 1 ? 's' : '') + "</div>"))
             $("section.places article#" + data[i].id + "").append($("<div class='user'></div>"))
-            $.get("http://172.24.238.0:5001/api/v1/users/" + data[i].user_id,
+            $.get("http://localhost:5001/api/v1/users/" + data[i].user_id,
             function(data_user)
             {
                 $("section.places article#" + data[i].id + " div.user").append($("<b>Owner: </b>"))
